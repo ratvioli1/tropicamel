@@ -1,8 +1,10 @@
+*[Look at it on GitHub so that images are visible.](https://github.com/ratvioli1/tropicamel)*
+
 ## Status
 
 This week I wanted to mock the board game's board up a tiny bit.
 
-![image](concept.png)
+![Concept. If you see this text then you're probably viewing on Inkfish.](concept.png)
 
 Some board spaces will sense the player. I'm not sure if I want to do it by weight or with hall effect sensors or something. If I put magnets in player pieces and on the board spaces, it might feel better when moving a piece.
 
@@ -10,7 +12,7 @@ While writing this, I realized that I might want to have like cards or dollars f
 
 And I don't know what player pieces should look like yet, currently I depict them as traffic cones. Banana for scale.
 
-![image](render.png)
+![Render. If you see this text then you're probably viewing on Inkfish.](render.png)
 
 Blender project is also committed.
 
