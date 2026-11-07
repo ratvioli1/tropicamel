@@ -36,11 +36,9 @@ Where you passively gain income. Some cards are factory cards, it means that the
 
 ## Physical design and parts
 
-The Oz64 is already running Linux on the main core and Arduino sketches on the small core. I have I2C OLEDs working if I want to incorporate those.
+The Oz64 is already running Linux on the main core and Arduino sketches on the small core. I have I2C OLEDs working if I want to incorporate those. I also have the CrowPanel working.
 
-I have ordered parts for everything below, and they'll all be here by November 2nd:
-
-- **Display:** A [7-inch Elecrow CrowPanel ESP32 display](https://www.amazon.com/dp/B0F8NFFH29): the center display, it has an 800×480 capacitive touchscreen, a built-in ESP32-S3, USB-C serial, a USB cable and acrylic case. The display ESP32 needs its own interface firmware and serial protocol and the Oz64 USB serial connection will need to be power needs to be tested.
+- **Display:** A [7-inch Elecrow CrowPanel ESP32 display](https://www.amazon.com/dp/B0F8NFFH29): the center display, it has an 800×480 capacitive touchscreen, a built-in ESP32-S3, USB-C serial, a USB cable and acrylic case.
 
 - **Ship:** I'm getting a 5 V geared stepper to drive a string loop under the board, with a guided carriage piece and magnets coupling it to the ship above a thin surface. That avoids an exposed slot/rail, but the magnet's strength and fraction will need to be tested. I can do a slotted carriage though if that doesn't work out. I'll be using a home switch to find an endpoint and move to the midpoint and opposite endpoint for the two-turn crossing.
 
@@ -50,9 +48,9 @@ I have ordered parts for everything below, and they'll all be here by November 2
 
 - **Control and power:** The Arduino side can drive the motor driver inputs and read switches while the Linux side can manage game state and send commands between cores using the existing working setup. Motors and display will use a separate 5 V supply.
 
-- **Turn button:** Pass a big red momentary button around the table. I'm buying a battery-powered ESP32-C3 to read the switch and sends a packet to the Oz64 via BLE if I can get that working, otherwise WiFi.
+- **Turn button:** Pass a big red momentary button around the table. I'm buying a battery-powered ESP32-C3 to read the switch and sends a packet to the Oz64 via WiFi if I can get that working, otherwise BLE.
 
-Parts are being shipped. My total was $236.48 so this all better be worth it.
+Parts:
 
 - 1 × [Elecrow CrowPanel 7-inch ESP32 touch display](https://www.amazon.com/dp/B0F8NFFH29), $54.99, including a USB cable and acrylic case.
 - 1 × [five 5 V 28BYJ-48 steppers and ULN2003 drivers](https://www.amazon.com/dp/B01CP18J4A), $14.99, for motion prototypes.
@@ -70,9 +68,10 @@ Parts are being shipped. My total was $236.48 so this all better be worth it.
 
 ## Timeline
 
-- [ ] **Oct 30:** Order prototype parts; make a paper board playable with basic rules; get a turn button and a simple lighting effect working if there's still time.
-- [ ] **Nov 6:** During exam prep, test a sensor and document the display UART and motor power plan; do a small motor/guide experiment if parts arrive.
-- [ ] **Nov 13:** Demonstrate one reactive space and both existing OLEDs. Test the 7-inch display if available and prototype a moving mechanism.
+- [x] **Oct 30:** Order prototype parts.
+- [x] **Nov 6:** Get the 7-inch display working with USB serial from the Oz64, read touchscreen input, and start the C++ game loop.
+- [ ] **Nov 13:** Make a paper board playable with basic rules. Test a Hall sensor and demonstrate one reactive space and both existing OLEDs. Document the motor power plan and try the turn button, lighting, or a moving mechanism if I have time.
+- [ ] **Nov 18:** Complete the turn button chassis.
 - [ ] **Nov 22:** Integrate a playable physical board with 2–4 reactive spaces and prototype the ship and one city lift.
 - [ ] **Dec 6:** Integrate remaining motion if prototypes work. Make startup, homing, reset and shutdown reliable and secure wiring.
 - [ ] **Dec 13:** Playtest, fix the most disruptive problems, and prepare my presentation.
